@@ -28,35 +28,7 @@
     <content><![CDATA[<p>something about the wesite2</p>
 ]]></content>
       <categories>
-        <category>dry</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>something2</title>
-    <url>/2022/10/22/01-49-14/</url>
-    <content><![CDATA[<p>something about the wesite2</p>
-]]></content>
-      <categories>
         <category>wet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>something2</title>
-    <url>/2022/10/22/01-49-14/</url>
-    <content><![CDATA[<p>something about the wesite2</p>
-]]></content>
-      <categories>
-        <category>dry</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>something2</title>
-    <url>/2022/10/22/01-49-14/</url>
-    <content><![CDATA[<p>something about the wesite2</p>
-]]></content>
-      <categories>
-        <category>wet</category>
-        <category>new</category>
       </categories>
   </entry>
   <entry>
@@ -72,7 +44,11 @@
     <title>ceshi</title>
     <url>/2022/10/25/01-49-14/</url>
     <content><![CDATA[<p>something about cite<br><img src="/dontca.html" alt="_post/dontca.md"></p>
-]]></content>
+<p><img src="/dontca.md" alt="_post/dontca.md"></p>
+<a href="#">Post not found: Hello-World</a>
+
+
+<a href="/2022/10/25/01-49-14/" title="something cite">something cite</a>]]></content>
       <categories>
         <category>qita</category>
         <category>new</category>
