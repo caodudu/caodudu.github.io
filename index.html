@@ -167,6 +167,33 @@
       background: #fbfcfe;
     }
 
+    .inline-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .inline-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 0 10px;
+      color: var(--ink);
+      background: rgba(255,255,255,.72);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .slide.primary .inline-link {
+      color: #fff;
+      border-color: rgba(255,255,255,.24);
+      background: rgba(255,255,255,.12);
+    }
+
     footer {
       margin-top: 44px;
       color: var(--muted);
@@ -188,22 +215,21 @@
   <main>
     <header>
       <div class="links">
-        <a class="button primary" href="/sci-journal-archive/">SCI Journal Archive</a>
         <a class="button" href="https://github.com/caodudu">GitHub</a>
       </div>
     </header>
 
     <section class="deck" aria-label="PARA">
-      <a class="slide primary" href="/sci-journal-archive/">
+      <div class="slide primary">
         <div class="slide-inner">
           <div>
             <div class="tag">P</div>
             <h2>Projects</h2>
-            <p>SCI Journal Archive</p>
+            <p></p>
           </div>
           <div class="slide-index">ACTIVE</div>
         </div>
-      </a>
+      </div>
 
       <div class="slide blank">
         <div class="slide-inner">
@@ -211,6 +237,9 @@
             <div class="tag">A</div>
             <h2>Areas</h2>
             <p>Research · Data · Writing</p>
+            <div class="inline-links">
+              <a class="inline-link" href="/sci-journal-archive/">SCI Journal Archive</a>
+            </div>
           </div>
           <div class="slide-index">STABLE</div>
         </div>
