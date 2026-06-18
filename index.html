@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>caodudu</title>
-  <meta name="description" content="caodudu">
+  <title>Projects</title>
+  <meta name="description" content="Projects">
   <style>
     :root {
       --bg: #f6f8fb;
@@ -34,34 +34,6 @@
       width: min(980px, calc(100% - 32px));
       margin: 0 auto;
       padding: 72px 0 48px;
-    }
-
-    header {
-      margin-bottom: 34px;
-    }
-
-    .eyebrow {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(34px, 6vw, 64px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .intro {
-      margin: 18px 0 0;
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
     }
 
     .links {
@@ -94,19 +66,53 @@
       color: #fff;
     }
 
-    .grid {
+    .deck {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       margin-top: 34px;
     }
 
-    .card {
-      min-height: 180px;
+    .slide {
+      position: relative;
+      min-height: 230px;
       border: 1px solid var(--line);
       border-radius: 10px;
       background: var(--panel);
       padding: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(29, 95, 208, .11), transparent 42%),
+        linear-gradient(315deg, rgba(15, 128, 88, .10), transparent 36%);
+      opacity: .7;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .slide:hover {
+      transform: translateY(-3px);
+      border-color: #9bb8ec;
+      box-shadow: 0 14px 34px rgba(23, 32, 51, .10);
+    }
+
+    .slide:hover::before {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    .slide-inner {
+      position: relative;
+      min-height: 188px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .tag {
@@ -118,28 +124,47 @@
       font-weight: 700;
       color: var(--green);
       background: var(--green-soft);
-      margin-bottom: 14px;
+      width: fit-content;
     }
 
-    .card h2 {
+    .slide h2 {
       margin: 0 0 10px;
-      font-size: 20px;
+      font-size: clamp(22px, 3vw, 34px);
       line-height: 1.3;
     }
 
-    .card p {
+    .slide p {
       margin: 0;
       color: var(--muted);
       line-height: 1.65;
       font-size: 14px;
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--blue);
+    .slide-index {
+      color: var(--muted);
       font-weight: 700;
-      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+
+    .slide.primary {
+      background: #10203d;
+      color: #fff;
+      border-color: #10203d;
+    }
+
+    .slide.primary p,
+    .slide.primary .slide-index {
+      color: rgba(255,255,255,.72);
+    }
+
+    .slide.primary .tag {
+      color: #dff6ee;
+      background: rgba(255,255,255,.14);
+    }
+
+    .slide.blank {
+      background: #fbfcfe;
     }
 
     footer {
@@ -153,7 +178,7 @@
         padding-top: 42px;
       }
 
-      .grid {
+      .deck {
         grid-template-columns: 1fr;
       }
     }
@@ -162,35 +187,60 @@
 <body>
   <main>
     <header>
-      <div class="eyebrow">caodudu</div>
-      <h1>caodudu</h1>
       <div class="links">
-        <a class="button primary" href="/sci-journal-archive/">打开 SCI Journal Archive</a>
+        <a class="button primary" href="/sci-journal-archive/">SCI Journal Archive</a>
         <a class="button" href="https://github.com/caodudu">GitHub</a>
       </div>
     </header>
 
-    <section class="grid" aria-label="Projects">
-      <article class="card">
-        <div class="tag">Active</div>
-        <h2>SCI Journal Archive</h2>
-        <p>
-          2025 SCIE / ESCI 期刊情报工作台：影响因子、学科分类、生物相关子集、出版社与国家统计，以及后续 PubMed 扫描入口。
-        </p>
-        <a href="/sci-journal-archive/">进入项目</a>
-      </article>
+    <section class="deck" aria-label="PARA">
+      <a class="slide primary" href="/sci-journal-archive/">
+        <div class="slide-inner">
+          <div>
+            <div class="tag">P</div>
+            <h2>Projects</h2>
+            <p>SCI Journal Archive</p>
+          </div>
+          <div class="slide-index">ACTIVE</div>
+        </div>
+      </a>
 
-      <article class="card">
-        <div class="tag">Later</div>
-        <h2>Workspace</h2>
-        <p>
-          以后如果有值得长期维护的小工具或数据项目，再放到这里。现在保持空一点，免得页面替自己说太多话。
-        </p>
-      </article>
+      <div class="slide blank">
+        <div class="slide-inner">
+          <div>
+            <div class="tag">A</div>
+            <h2>Areas</h2>
+            <p>Research · Data · Writing</p>
+          </div>
+          <div class="slide-index">STABLE</div>
+        </div>
+      </div>
+
+      <div class="slide blank">
+        <div class="slide-inner">
+          <div>
+            <div class="tag">R</div>
+            <h2>Resources</h2>
+            <p>Datasets · Tools · Notes</p>
+          </div>
+          <div class="slide-index">LIBRARY</div>
+        </div>
+      </div>
+
+      <div class="slide blank">
+        <div class="slide-inner">
+          <div>
+            <div class="tag">A</div>
+            <h2>Archives</h2>
+            <p>Closed · Frozen · Historical</p>
+          </div>
+          <div class="slide-index">PAST</div>
+        </div>
+      </div>
     </section>
 
     <footer>
-      Updated 2026-06-18 · hosted on GitHub Pages
+      2026-06-18
     </footer>
   </main>
 </body>
